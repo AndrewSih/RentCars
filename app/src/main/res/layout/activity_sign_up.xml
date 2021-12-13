@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".SignUp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/fon_cars"
+        tools:layout_editor_absoluteX="173dp"
+        tools:layout_editor_absoluteY="173dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:background="@color/white"
+            android:layout_marginTop="4dp"
+            android:orientation="vertical"
+            android:elevation="2dp">
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/username"
+                android:inputType="textPersonName"
+                android:textColorHint="@color/hint"
+                android:textSize="20sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@color/white"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:elevation="2dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/password"
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+                android:textColorHint="@color/hint" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:elevation="2dp">
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Имя"
+
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+                android:textColorHint="@color/hint" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:elevation="2dp">
+
+            <EditText
+                android:id="@+id/surName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Фамилия"
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+                android:textColorHint="@color/hint" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:elevation="2dp">
+
+            <EditText
+                android:id="@+id/patronymic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Отчество"
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+                android:textColorHint="@color/hint" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:elevation="2dp">
+
+            <EditText
+                android:id="@+id/passport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Паспорт"
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+                android:textColorHint="@color/hint" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:elevation="2dp">
+
+            <EditText
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Адрес"
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+                android:textColorHint="@color/hint" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:elevation="2dp">
+
+            <EditText
+                android:id="@+id/telephone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Телефон"
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+                android:textColorHint="@color/hint" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingRight="30dp"
+            android:paddingLeft="30dp"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <Button
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/button"
+                android:onClick="btnRegister_Click"
+                android:text="@string/register"
+                tools:ignore="OnClick"
+                android:elevation="4dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"></LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

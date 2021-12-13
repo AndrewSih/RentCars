@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fon_cars"
+    tools:context=".Cabinet">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingRight="30dp"
+        android:paddingLeft="30dp"
+        android:layout_weight="2"
+        android:orientation="vertical">
+
+
+
+        <Button
+            android:id="@+id/carSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:onClick="search"
+            android:elevation="3dp"
+            android:padding="10dp"
+            android:text="Выбрать авто"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/button"/>
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="История заказов"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp"
+            android:elevation="2dp">
+
+        </ListView>
+    </LinearLayout>
+</RelativeLayout>

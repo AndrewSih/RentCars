@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1049372660367",
+    "firebase_url": "https://rentcarkurs-default-rtdb.firebaseio.com",
+    "project_id": "rentcarkurs",
+    "storage_bucket": "rentcarkurs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1049372660367:android:0723f54f781fb6a83896fa",
+        "android_client_info": {
+          "package_name": "com.example.rentcars"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1049372660367-bbvsfn01o5bbgl421pd7ohlmedjlp8kj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCX8bo74MHdYZtu91jT9qx1RYvE1lp5EyI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1049372660367-bbvsfn01o5bbgl421pd7ohlmedjlp8kj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

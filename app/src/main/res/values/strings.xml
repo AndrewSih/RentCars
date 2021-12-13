@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Аренда авто</string>
+    <string name="username">ID</string>
+    <string name="password">Пароль</string>
+    <string name="inter">Войти</string>
+    <string name="register">Регистрация</string>
+</resources>
