@@ -19,8 +19,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class UpdateDelete extends AppCompatActivity {
-EditText chMark, chModel,  chColor, chCost;
-TextView chNum;
+EditText city, description,  mobileNo, cost;
+TextView model;
 DatabaseReference ref;
 //TextView key1;
 
@@ -28,33 +28,29 @@ DatabaseReference ref;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_delete);
-        chMark = (EditText) findViewById(R.id.chMark);
-        chModel = (EditText) findViewById(R.id.chModel);
-        chNum = (TextView) findViewById(R.id.chNum);
-        chColor = (EditText) findViewById(R.id.chColor);
-        chCost = (EditText) findViewById(R.id.chCost);
+        city = findViewById(R.id.city);
+        description = findViewById(R.id.description);
+        model = findViewById(R.id.model);
+        mobileNo = findViewById(R.id.mobileNo);
+        cost = findViewById(R.id.cost);
        String key= getIntent().getExtras().get("key").toString();
-        ref = FirebaseDatabase.getInstance().getReference().child("Car").child(key);
-//        key1 = (TextView)findViewById(R.id.key); key1.setText(key);
-        chMark.setText(getIntent().getStringExtra("markCar"));
-        chModel.setText(getIntent().getStringExtra("modelCar"));
-        chNum.setText(getIntent().getStringExtra("numCar"));
-        chColor.setText(getIntent().getStringExtra("colorCar"));
-        chCost.setText(getIntent().getStringExtra("costCar"));
+        ref = FirebaseDatabase.getInstance().getReference().child("cars").child(key);
+        model.setText(getIntent().getStringExtra("model"));
+        description.setText(getIntent().getStringExtra("description"));
+        city.setText(getIntent().getStringExtra("city"));
+        mobileNo.setText(getIntent().getStringExtra("mobileNo"));
+        cost.setText(getIntent().getStringExtra("cost"));
     }
 
     public void btnDel(View view) {
-ref.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
-    @Override
-    public void onComplete(@NonNull Task<Void> task) {
-        if (task.isSuccessful())
-        {
-            Toast.makeText(UpdateDelete.this, "Удалено!",Toast.LENGTH_SHORT).show();
-            Intent i = new Intent(UpdateDelete.this, CarsShow.class);
-            startActivity(i);
-        }
-
+ref.removeValue().addOnCompleteListener(task -> {
+    if (task.isSuccessful())
+    {
+        Toast.makeText(UpdateDelete.this, "Удалено!",Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(UpdateDelete.this, CarsShowChange.class);
+        startActivity(i);
     }
+
 });
     }
 
@@ -62,14 +58,14 @@ ref.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
 ref.addListenerForSingleValueEvent(new ValueEventListener() {
     @Override
     public void onDataChange(@NonNull DataSnapshot snapshot) {
-        snapshot.getRef().child("modelCar").setValue(chModel.getText().toString());
-        snapshot.getRef().child("markCar").setValue(chMark.getText().toString());
-        snapshot.getRef().child("numCar").setValue(chNum.getText().toString());
-        snapshot.getRef().child("colorCar").setValue(chColor.getText().toString());
-        snapshot.getRef().child("costCar").setValue(chCost.getText().toString());
+        snapshot.getRef().child("model").setValue(model.getText().toString());
+        snapshot.getRef().child("description").setValue(description.getText().toString());
+        snapshot.getRef().child("city").setValue(city.getText().toString());
+        snapshot.getRef().child("mobileNo").setValue(mobileNo.getText().toString());
+        snapshot.getRef().child("cost").setValue(cost.getText().toString());
         Toast.makeText(UpdateDelete.this, "Успешно изменено!!"
                 ,Toast.LENGTH_SHORT).show();
-        Intent i = new Intent(UpdateDelete.this, CarsShow.class);
+        Intent i = new Intent(UpdateDelete.this, CarsShowChange.class);
         startActivity(i);
 
     }

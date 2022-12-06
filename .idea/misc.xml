@@ -5,10 +5,22 @@
       <map>
         <entry key="..\:/Users/prote/AndroidStudioProjects/RentCars/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/prote/AndroidStudioProjects/RentCars/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_add_cars.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_cabinet.xml" value="0.23489583333333333" />
+        <entry key="app/src/main/res/layout/activity_cars_show.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_cars_show_change.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_category.xml" value="0.15505371093750006" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.23489583333333333" />
+        <entry key="app/src/main/res/layout/activity_rent_object_show.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.23489583333333333" />
+        <entry key="app/src/main/res/layout/activity_update_delete.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_variable.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/cars.xml" value="0.19444444444444445" />
+        <entry key="app/src/main/res/layout/rent_object.xml" value="0.1" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

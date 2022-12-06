@@ -5,35 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fon_cars"
-    tools:context=".CarsShowChange">
+    tools:context=".CarsShow">
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingRight="30dp"
         android:paddingLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="2dp"
         android:layout_weight="2"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/addCar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="btnAddCar"
-            android:text="Добавить"
-            android:backgroundTint="@color/button"
-            tools:ignore="OnClick" />
-        <Button
-            android:id="@+id/btnExit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="btnExit"
-            android:text="Назад"
-            android:backgroundTint="@color/button" />
+
         <ListView
             android:id="@+id/listView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp"
+            >
 
+        </ListView>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

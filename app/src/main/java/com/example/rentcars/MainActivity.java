@@ -23,11 +23,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        email = (EditText) findViewById(R.id.email);
-        pass = (EditText) findViewById(R.id.password);
+        email = findViewById(R.id.email);
+        pass = findViewById(R.id.password);
         ref = FirebaseDatabase.getInstance().getReference().child("Клиент");
     }
+
     String mPass;
+
     public void btnLogin_Click(View view) {
         String mEmail = email.getText().toString();
         mPass = pass.getText().toString();
@@ -36,44 +38,47 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 NewClient newClient = snapshot.getValue(NewClient.class);
-               if (mEmail.equals("admin") & mPass.equals("admin")){
-                   Toast.makeText(MainActivity.this, "Привет Админ!!",
-                        Toast.LENGTH_SHORT).show();
+                try {
+                    if (mEmail.equals("admin") & mPass.equals("admin")) {
+                        Toast.makeText(MainActivity.this, "Привет Админ!!",
+                                Toast.LENGTH_SHORT).show();
 
-                    Intent i = new Intent(MainActivity.this, CarsShowChange.class);
+                        Intent i = new Intent(MainActivity.this, CategoryScreen.class);
 
-                    startActivity(i);
+                        startActivity(i);
 
 
-                }
+                    } else if (mEmail.equals(newClient.getEmail()) && mPass.equals(newClient.getPassword())) {
+                        /*Toast.makeText(MainActivity.this, "Привет " + mEmail,
+                                Toast.LENGTH_SHORT).show();*/
+                        Intent i = new Intent(MainActivity.this, Cabinet.class);
+                        i.putExtra("email", mEmail);
 
-                 else if ( mPass.equals(newClient.getPassword())){
+                        startActivity(i);
 
-                    Intent i = new Intent(MainActivity.this, Cabinet.class);
-                    i.putExtra("email", mEmail);
-
-                    startActivity(i);
-                   Toast.makeText(MainActivity.this, "Привет " + mEmail,
-                           Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
+                    }
+                } catch (Exception exception) {
+                    Intent i = new Intent(MainActivity.this, MainActivity.class);
                     Toast.makeText(MainActivity.this, "Не верный ID/пароль",
                             Toast.LENGTH_SHORT).show();
+                    startActivity(i);
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                Intent i = new Intent(MainActivity.this, MainActivity.class);
+                Toast.makeText(MainActivity.this, "Не верный ID/пароль",
+                        Toast.LENGTH_SHORT).show();
+                startActivity(i);
             }
-        }) ;
+        });
 
 
     }
 
     public void btnRegister_Click(View view) {
-        Intent register = new Intent(MainActivity.this, SignUp.class );
+        Intent register = new Intent(MainActivity.this, SignUp.class);
         startActivity(register);
     }
 

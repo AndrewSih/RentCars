@@ -15,9 +15,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class AddCars extends AppCompatActivity {
-   EditText model, description, city, mobileNo, cost;
-   private RentObject cars;
+public class AddPlayStation extends AppCompatActivity {
+    EditText model, description, city, mobileNo, cost;
+    private RentObject cars;
     FirebaseDatabase database;
     DatabaseReference ref;
     private Button btnExit;
@@ -36,10 +36,10 @@ public class AddCars extends AppCompatActivity {
         cost = findViewById(R.id.cost);
         cars = new RentObject();
         database = FirebaseDatabase.getInstance();
-        ref = database.getReference().child("cars");
+        ref = database.getReference().child("PS");
         btnExit = findViewById(R.id.btnExit);
         btnExit.setOnClickListener(v -> {
-            Intent intent = new Intent(AddCars.this, CarsShowChange.class);
+            Intent intent = new Intent(AddPlayStation.this, PlayStationShowChange.class);
             startActivity(intent);
 
         });
@@ -47,27 +47,23 @@ public class AddCars extends AppCompatActivity {
     }
     public void carSave (View view)
     {
-      cars.setModel(model.getText().toString());
-      cars.setDescription(description.getText().toString());
-      cars.setCity(city.getText().toString());
-      cars.setMobileNo(mobileNo.getText().toString());
-      cars.setCost(cost.getText().toString());
-      ref.child(cars.getModel()).setValue(cars).addOnCompleteListener(task -> {
-          if( task.isSuccessful()){
-              Toast.makeText(AddCars.this, "Авто добавлено", Toast.LENGTH_SHORT).show();
-              Intent next = new Intent(AddCars.this, CarsShowChange.class);
-              startActivity(next);
-          }
-          else
-          {
-              Toast.makeText(AddCars.this, "Ошибка", Toast.LENGTH_SHORT).show();
-              Intent next = new Intent(AddCars.this, AddCars.class);
-              startActivity(next);
-          }
-      });
-
-
+        cars.setModel(model.getText().toString());
+        cars.setDescription(description.getText().toString());
+        cars.setCity(city.getText().toString());
+        cars.setMobileNo(mobileNo.getText().toString());
+        cars.setCost(cost.getText().toString());
+        ref.child(cars.getModel()).setValue(cars).addOnCompleteListener(task -> {
+            if( task.isSuccessful()){
+                Toast.makeText(AddPlayStation.this, "Приставка добавлена", Toast.LENGTH_SHORT).show();
+                Intent next = new Intent(AddPlayStation.this, PlayStationShowChange.class);
+                startActivity(next);
+            }
+            else
+            {
+                Toast.makeText(AddPlayStation.this, "Ошибка", Toast.LENGTH_SHORT).show();
+                Intent next = new Intent(AddPlayStation.this, PlayStationShowChange.class);
+                startActivity(next);
+            }
+        });
     }
-
-
 }

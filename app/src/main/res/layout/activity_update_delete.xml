@@ -29,12 +29,12 @@
             android:layout_marginTop="4dp"
             android:elevation="2dp">
 
-            <EditText
-                android:id="@+id/chMark"
+            <TextView
+                android:id="@+id/model"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Марка"
+                android:hint="Модель"
                 android:inputType="textPersonName"
                 android:textColorHint="@color/hint"
                 android:textSize="20sp"
@@ -55,12 +55,12 @@
             android:elevation="2dp">
 
             <EditText
-                android:id="@+id/chModel"
+                android:id="@+id/description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:hint="Модель"
+                android:hint="Описание"
                 android:textSize="20sp"
                 android:textColorHint="@color/hint"/>
         </LinearLayout>
@@ -77,14 +77,14 @@
             android:layout_marginTop="2dp"
             android:elevation="2dp">
 
-            <TextView
-                android:id="@+id/chNum"
+            <EditText
+                android:id="@+id/city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:layout_marginTop="10dp"
                 android:inputType="textPersonName"
-                android:hint="Номер"
+                android:hint="Город"
                 android:textSize="20sp"
                 android:textColorHint="@color/hint"/>
         </LinearLayout>
@@ -102,12 +102,12 @@
             android:elevation="2dp">
 
             <EditText
-                android:id="@+id/chColor"
+                android:id="@+id/mobileNo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:hint="Цвет"
+                android:hint="Телефон"
                 android:textSize="20sp"
                 android:textColorHint="@color/hint"/>
         </LinearLayout>
@@ -126,7 +126,7 @@
             android:elevation="2dp">
 
             <EditText
-                android:id="@+id/chCost"
+                android:id="@+id/cost"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"

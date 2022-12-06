@@ -16,7 +16,7 @@ import com.firebase.ui.database.FirebaseListOptions;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 
-public class CarsShowChange extends AppCompatActivity {
+public class PhotoShowChange extends AppCompatActivity {
     ListView lv;
     FirebaseListAdapter adapter;
 
@@ -25,10 +25,10 @@ public class CarsShowChange extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cars_show_change);
         lv = findViewById(R.id.listView);
-        Query query = FirebaseDatabase.getInstance().getReference().child("cars");
+        Query query = FirebaseDatabase.getInstance().getReference().child("Photo");
         FirebaseListOptions<RentObject> options = new FirebaseListOptions.Builder<RentObject>()
                 .setLayout(R.layout.cars)
-                .setLifecycleOwner(CarsShowChange.this)
+                .setLifecycleOwner(PhotoShowChange.this)
                 .setQuery(query,RentObject.class).build();
         adapter = new FirebaseListAdapter(options) {
             @SuppressLint("SetTextI18n")
@@ -40,7 +40,7 @@ public class CarsShowChange extends AppCompatActivity {
                 TextView colorCar = v.findViewById(R.id.colorCar);
                 TextView costCar = v.findViewById(R.id.costCar);
                 RentObject crs = (RentObject) model;
-                markCar.setText("Модель : " + crs.getModel());
+                markCar.setText("Фотоаппарат : " + crs.getModel());
                 modelCar.setText("Описание : " + crs.getDescription());
                 numCar.setText("Город : " + crs.getCity());
                 colorCar.setText("Телефон : " + crs.getMobileNo());
@@ -49,7 +49,7 @@ public class CarsShowChange extends AppCompatActivity {
         };
         lv.setAdapter(adapter);
         lv.setOnItemClickListener((parent, view, position, id) -> {
-            Intent updateDelete = new Intent(CarsShowChange. this, UpdateDelete.class);
+            Intent updateDelete = new Intent(PhotoShowChange. this, UpdateDeletePhoto.class);
             RentObject c = (RentObject) parent.getItemAtPosition(position);
             updateDelete.putExtra("model",c.getModel());
             updateDelete.putExtra("description",c.getDescription());
@@ -74,13 +74,11 @@ public class CarsShowChange extends AppCompatActivity {
         adapter.stopListening();
     }
     public void btnAddCar(View view) {
-        Intent register = new Intent(CarsShowChange.this,AddCars.class );
+        Intent register = new Intent(PhotoShowChange.this,AddPhoto.class );
         startActivity(register);
     }
-
     public void btnExit(View view) {
-        Intent register = new Intent(CarsShowChange.this,CategoryScreen.class );
+        Intent register = new Intent(PhotoShowChange.this,CategoryScreen.class );
         startActivity(register);
     }
 }
-

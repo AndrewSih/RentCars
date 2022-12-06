@@ -1,5 +1,6 @@
 package com.example.rentcars;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -25,17 +26,18 @@ public class Cabinet extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cabinet);
-        lv = (ListView) findViewById(R.id.listView);
+        lv = findViewById(R.id.listView);
         Intent i = getIntent();
         String mEmail = i.getStringExtra("email");
         Query query = FirebaseDatabase.getInstance().getReference().child("Клиент").
                 child(mEmail).child("rent");
 
-        FirebaseListOptions<Cars> options = new FirebaseListOptions.Builder<Cars>()
+        FirebaseListOptions<RentObject> options = new FirebaseListOptions.Builder<RentObject>()
                 .setLayout(R.layout.cars)
                 .setLifecycleOwner(Cabinet.this)
-                .setQuery(query,Cars.class).build();
+                .setQuery(query, RentObject.class).build();
         adapter = new FirebaseListAdapter(options) {
+            @SuppressLint("SetTextI18n")
             @Override
             protected void populateView(@NonNull View v, @NonNull Object model, int position) {
                 TextView markCar = v.findViewById(R.id.markCar);
@@ -44,12 +46,12 @@ public class Cabinet extends AppCompatActivity {
                 TextView colorCar = v.findViewById(R.id.colorCar);
                 TextView costCar = v.findViewById(R.id.costCar);
                 ImageView image = v.findViewById(R.id.imageView);
-                Cars crs = (Cars) model;
-                markCar.setText("Марка : " + crs.getMarkCar().toString());
-                modelCar.setText("Модель : " + crs.getModelCar().toString());
-                numCar.setText("Гос номер : " + crs.getNumCar().toString());
-                colorCar.setText("Цвет : " + crs.getColorCar().toString());
-                costCar.setText("Стоимость : "+ crs.getCostCar().toString());
+                RentObject crs = (RentObject) model;
+                markCar.setText("Марка : " + crs.getModel());
+                modelCar.setText("Описание : " + crs.getDescription());
+                numCar.setText("Город : " + crs.getCity());
+                colorCar.setText("Номер : " + crs.getMobileNo());
+                costCar.setText("Стоимость : " + crs.getCost());
                 Picasso.get().load(crs.getImage()).into(image);
             }
         };
@@ -68,11 +70,35 @@ public class Cabinet extends AppCompatActivity {
         adapter.stopListening();
 
     }
+
     public void search(View view) {
-        Intent register = new Intent(Cabinet.this,CarsShow.class );
+        Intent register = new Intent(Cabinet.this, CarsShow.class);
         Intent i = getIntent();
         String mEmail = i.getStringExtra("email");
-        register.putExtra("email",String.valueOf(mEmail));
+        register.putExtra("email", String.valueOf(mEmail));
+        startActivity(register);
+    }
+
+    public void photoRent(View view) {
+        Intent register = new Intent(Cabinet.this, PhotoShow.class);
+        Intent i = getIntent();
+        String mEmail = i.getStringExtra("email");
+        register.putExtra("email", String.valueOf(mEmail));
+        startActivity(register);
+    }
+
+    public void psRent(View view) {
+        Intent register = new Intent(Cabinet.this, PlayStationShow.class);
+        Intent i = getIntent();
+        String mEmail = i.getStringExtra("email");
+        register.putExtra("email", String.valueOf(mEmail));
+        startActivity(register);
+    }
+    public void btnExit(View view) {
+        Intent register = new Intent(Cabinet.this, MainActivity.class);
+        Intent i = getIntent();
+        String mEmail = i.getStringExtra("email");
+        register.putExtra("email", String.valueOf(mEmail));
         startActivity(register);
     }
 

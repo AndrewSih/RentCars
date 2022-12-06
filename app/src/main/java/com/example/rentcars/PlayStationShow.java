@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.squareup.picasso.Picasso;
 
-public class CarsShow extends AppCompatActivity {
+public class PlayStationShow extends AppCompatActivity {
     ListView lv;
     FirebaseListAdapter adapter;
     FirebaseDatabase database;
@@ -32,11 +32,11 @@ public class CarsShow extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rent_object_show);
         lv = findViewById(R.id.listView);
-        Query query = FirebaseDatabase.getInstance().getReference().child("cars");
+        Query query = FirebaseDatabase.getInstance().getReference().child("PS");
         FirebaseListOptions<RentObject> options = new FirebaseListOptions.Builder<RentObject>()
                 .setLayout(R.layout.rent_object)
-                .setLifecycleOwner(CarsShow.this)
-                .setQuery(query, RentObject.class).build();
+                .setLifecycleOwner(PlayStationShow.this)
+                .setQuery(query,RentObject.class).build();
         adapter = new FirebaseListAdapter(options) {
             @SuppressLint("SetTextI18n")
             @Override
@@ -48,25 +48,25 @@ public class CarsShow extends AppCompatActivity {
                 TextView cost = v.findViewById(R.id.cost);
                 ImageView image = v.findViewById(R.id.imageView);
                 RentObject crs = (RentObject) model;
-                modelRent.setText("Марка : " + crs.getModel());
+                modelRent.setText("Консоль : " + crs.getModel());
                 description.setText("Описание : " + crs.getDescription());
                 city.setText("Город : " + crs.getCity());
                 mobileNo.setText("Номер : " + crs.getMobileNo());
-                cost.setText("Стоимость : " + crs.getCost());
+                cost.setText("Стоимость : "+ crs.getCost());
                 Picasso.get().load(crs.getImage()).into(image);
             }
         };
         lv.setAdapter(adapter);
         lv.setOnItemClickListener((parent, view, position, id) -> {
             cars = new RentObject();
-            Intent updateDelete = new Intent(CarsShow.this, Cabinet.class);
+            Intent updateDelete = new Intent(PlayStationShow. this, Cabinet.class);
             RentObject c = (RentObject) parent.getItemAtPosition(position);
-            updateDelete.putExtra("model", c.getModel());
-            updateDelete.putExtra("description", c.getDescription());
-            updateDelete.putExtra("city", c.getCity());
-            updateDelete.putExtra("key", c.getModel());
-            updateDelete.putExtra("mobileNo", c.getMobileNo());
-            updateDelete.putExtra("cost", c.getCost());
+            updateDelete.putExtra("model",c.getModel());
+            updateDelete.putExtra("description",c.getDescription());
+            updateDelete.putExtra("city",c.getCity());
+            updateDelete.putExtra("key",c.getModel());
+            updateDelete.putExtra("mobileNo",c.getMobileNo());
+            updateDelete.putExtra("cost",c.getCost());
             cars.setModel(updateDelete.getStringExtra("model"));
             cars.setDescription(updateDelete.getStringExtra("description"));
             cars.setCity(updateDelete.getStringExtra("city"));
@@ -79,8 +79,7 @@ public class CarsShow extends AppCompatActivity {
             ref = database.getReference().child("Клиент").
                     child(mEmail).child("rent");
             ref.push().setValue(cars);
-
-            Toast.makeText(CarsShow.this, "Успешно добавлено!",
+            Toast.makeText(PlayStationShow.this, "Успешно добавлено!",
                     Toast.LENGTH_SHORT).show();
             startActivity(updateDelete);
         });

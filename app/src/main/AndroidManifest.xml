@@ -9,7 +9,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RentCars">
+
         <activity android:name=".Cabinet"></activity>
+        <activity
+            android:name=".UpdateDeletePs"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddPlayStation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PlayStationShowChange"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PhotoShowChange"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UpdateDeletePhoto"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddPhoto"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CategoryScreen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PlayStationShow"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PhotoShow"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".CarsShowChange"
             android:screenOrientation="portrait" />

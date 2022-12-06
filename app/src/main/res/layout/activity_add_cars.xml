@@ -29,11 +29,11 @@
             android:layout_marginTop="4dp">
 
             <EditText
-                android:id="@+id/edMark"
+                android:id="@+id/model"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Марка"
+                android:hint="Модель"
                 android:inputType="textPersonName"
                 android:textColorHint="@color/hint"
                 android:textSize="24sp"
@@ -53,12 +53,12 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/edModel"
+                android:id="@+id/description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:hint="Модель"
+                android:hint="Описание"
                 android:textSize="24sp"
                 android:textColorHint="@color/hint"/>
         </LinearLayout>
@@ -75,11 +75,11 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/edNumCar"
+                android:id="@+id/city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Номер"
+                android:hint="Город"
                 android:inputType="textPersonName"
                 android:textColorHint="@color/hint"
                 android:textSize="24sp"
@@ -98,12 +98,12 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/edColor"
+                android:id="@+id/mobileNo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:hint="Цвет"
+                android:hint="Телефон"
                 android:textSize="24sp"
                 android:textColorHint="@color/hint"/>
         </LinearLayout>
@@ -121,7 +121,7 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/edCost"
+                android:id="@+id/cost"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"

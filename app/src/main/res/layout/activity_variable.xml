@@ -11,11 +11,21 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingRight="30dp"
-        android:paddingLeft="30dp"
         android:layout_weight="2"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp">
 
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Категория"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/carSearch"
@@ -26,67 +36,35 @@
             android:elevation="3dp"
             android:onClick="search"
             android:padding="5dp"
-            android:layout_margin="5dp"
-
             android:text="Аренда авто"
             android:textSize="10sp"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/photoRent"
+            android:id="@+id/зрщещ"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:backgroundTint="@color/button"
             android:elevation="3dp"
-            android:onClick="photoRent"
+            android:onClick="search"
             android:padding="5dp"
-            android:layout_margin="5dp"
             android:text="Аренда фотоаппаратов"
             android:textSize="10sp"
             android:textStyle="bold" />
+
         <Button
-            android:id="@+id/psRent"
+            android:id="@+id/carSearch2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:backgroundTint="@color/button"
             android:elevation="3dp"
-            android:onClick="psRent"
+            android:onClick="search"
             android:padding="5dp"
-            android:layout_margin="5dp"
             android:text="Аренда игровых приставок"
             android:textSize="10sp"
             android:textStyle="bold" />
-        <Button
-            android:id="@+id/btnExit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:backgroundTint="@color/button"
-            android:elevation="3dp"
-            android:onClick="btnExit"
-            android:padding="5dp"
-            android:layout_margin="5dp"
-            android:text="Выйти"
-            android:textSize="10sp"
-            android:textStyle="bold" />
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="История заказов"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
-        <ListView
-            android:id="@+id/listView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="0dp"
-            android:elevation="2dp">
 
-        </ListView>
     </LinearLayout>
 </RelativeLayout>

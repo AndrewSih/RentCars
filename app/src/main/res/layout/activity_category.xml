@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fon_cars"
-    tools:context=".Cabinet">
+    tools:context=".CategoryScreen">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +16,14 @@
         android:layout_weight="2"
         android:orientation="vertical">
 
-
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Категории"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
         <Button
             android:id="@+id/carSearch"
             android:layout_width="match_parent"
@@ -24,10 +31,8 @@
             android:layout_marginBottom="20dp"
             android:backgroundTint="@color/button"
             android:elevation="3dp"
-            android:onClick="search"
+            android:onClick="rentCars"
             android:padding="5dp"
-            android:layout_margin="5dp"
-
             android:text="Аренда авто"
             android:textSize="10sp"
             android:textStyle="bold" />
@@ -41,7 +46,6 @@
             android:elevation="3dp"
             android:onClick="photoRent"
             android:padding="5dp"
-            android:layout_margin="5dp"
             android:text="Аренда фотоаппаратов"
             android:textSize="10sp"
             android:textStyle="bold" />
@@ -54,7 +58,6 @@
             android:elevation="3dp"
             android:onClick="psRent"
             android:padding="5dp"
-            android:layout_margin="5dp"
             android:text="Аренда игровых приставок"
             android:textSize="10sp"
             android:textStyle="bold" />
@@ -67,26 +70,8 @@
             android:elevation="3dp"
             android:onClick="btnExit"
             android:padding="5dp"
-            android:layout_margin="5dp"
             android:text="Выйти"
             android:textSize="10sp"
             android:textStyle="bold" />
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="История заказов"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
-        <ListView
-            android:id="@+id/listView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="0dp"
-            android:elevation="2dp">
-
-        </ListView>
     </LinearLayout>
 </RelativeLayout>
