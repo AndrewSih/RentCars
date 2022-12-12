@@ -38,6 +38,14 @@ public class CategoryScreen extends AppCompatActivity {
         register.putExtra("email", String.valueOf(mEmail));
         startActivity(register);
     }
+
+    public void btnMobile(View view) {
+        Intent register = new Intent(CategoryScreen.this, MobilePhoneShowChange.class);
+        Intent i = getIntent();
+        String mEmail = i.getStringExtra("email");
+        register.putExtra("email", String.valueOf(mEmail));
+        startActivity(register);
+    }
     public void btnExit(View view) {
         Intent register = new Intent(CategoryScreen.this, MainActivity.class);
         Intent i = getIntent();

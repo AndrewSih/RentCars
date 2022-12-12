@@ -41,9 +41,7 @@ public class AddCars extends AppCompatActivity {
         btnExit.setOnClickListener(v -> {
             Intent intent = new Intent(AddCars.this, CarsShowChange.class);
             startActivity(intent);
-
         });
-
     }
     public void carSave (View view)
     {
@@ -65,9 +63,5 @@ public class AddCars extends AppCompatActivity {
               startActivity(next);
           }
       });
-
-
     }
-
-
 }

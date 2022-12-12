@@ -29,9 +29,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     String mPass;
+    String mEmail;
 
     public void btnLogin_Click(View view) {
-        String mEmail = email.getText().toString();
+        mEmail = email.getText().toString();
         mPass = pass.getText().toString();
 
         ref.child(mEmail).addValueEventListener(new ValueEventListener() {
@@ -73,8 +74,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
-
     }
 
     public void btnRegister_Click(View view) {

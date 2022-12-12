@@ -15,6 +15,18 @@
             android:name=".UpdateDeletePs"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".UpdateDeleteMobile"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MobilePhoneShowChange"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddMobile"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MobilePhoneShow"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".AddPlayStation"
             android:screenOrientation="portrait" />
         <activity

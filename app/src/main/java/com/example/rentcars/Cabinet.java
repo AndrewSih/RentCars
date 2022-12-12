@@ -57,20 +57,17 @@ public class Cabinet extends AppCompatActivity {
         };
         lv.setAdapter(adapter);
     }
-
     @Override
     protected void onStart() {
         super.onStart();
         adapter.startListening();
     }
-
     @Override
     protected void onStop() {
         super.onStop();
         adapter.stopListening();
 
     }
-
     public void search(View view) {
         Intent register = new Intent(Cabinet.this, CarsShow.class);
         Intent i = getIntent();
@@ -94,6 +91,13 @@ public class Cabinet extends AppCompatActivity {
         register.putExtra("email", String.valueOf(mEmail));
         startActivity(register);
     }
+    public void btnMobile(View view) {
+        Intent register = new Intent(Cabinet.this, MobilePhoneShow.class);
+        Intent i = getIntent();
+        String mEmail = i.getStringExtra("email");
+        register.putExtra("email", String.valueOf(mEmail));
+        startActivity(register);
+    }
     public void btnExit(View view) {
         Intent register = new Intent(Cabinet.this, MainActivity.class);
         Intent i = getIntent();
@@ -101,5 +105,4 @@ public class Cabinet extends AppCompatActivity {
         register.putExtra("email", String.valueOf(mEmail));
         startActivity(register);
     }
-
 }
